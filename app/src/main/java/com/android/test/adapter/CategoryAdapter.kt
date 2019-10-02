@@ -10,7 +10,7 @@ import com.android.test.R
 import com.android.test.base.BaseRecyclerAdapter
 import com.android.test.base.BaseViewHolder
 import com.android.test.interfaces.OnRecyclerItemClickListener
-import com.android.test.local_db.Category
+import com.android.test.local_db.entity.Category
 
 class CategoryAdapter(context: Context):
     BaseRecyclerAdapter<Category, OnRecyclerItemClickListener<Category>, CategoryAdapter.CategoryVH>(context) {

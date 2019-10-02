@@ -1,7 +1,8 @@
-package com.android.test.local_db
+package com.android.test.local_db.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.android.test.local_db.entity.Category
 
 @Dao
 interface CategoryDao {

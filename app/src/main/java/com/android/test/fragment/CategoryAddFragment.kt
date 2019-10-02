@@ -4,16 +4,13 @@ package com.android.test.fragment
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProviders
 
 import com.android.test.R
-import com.android.test.local_db.Category
+import com.android.test.local_db.entity.Category
 import com.android.test.viem_model.CategoryViewModel
 import kotlinx.android.synthetic.main.fragment_category_add.*
 import java.util.*

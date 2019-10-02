@@ -1,4 +1,4 @@
-package com.android.test.local_db
+package com.android.test.local_db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

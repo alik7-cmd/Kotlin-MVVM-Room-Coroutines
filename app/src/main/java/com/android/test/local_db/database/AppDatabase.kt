@@ -1,9 +1,11 @@
-package com.android.test.local_db
+package com.android.test.local_db.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room.*
 import androidx.room.RoomDatabase
+import com.android.test.local_db.dao.CategoryDao
+import com.android.test.local_db.entity.Category
 
 @Database(entities = arrayOf(Category::class), version = 1)
 abstract class AppDatabase : RoomDatabase() {
@@ -17,7 +19,10 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): AppDatabase =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
+                INSTANCE
+                    ?: buildDatabase(
+                        context
+                    ).also { INSTANCE = it }
             }
 
         private fun buildDatabase(context: Context) =

@@ -2,9 +2,9 @@ package com.android.test.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.android.test.local_db.AppDatabase
-import com.android.test.local_db.Category
-import com.android.test.local_db.CategoryDao
+import com.android.test.local_db.database.AppDatabase
+import com.android.test.local_db.entity.Category
+import com.android.test.local_db.dao.CategoryDao
 import android.os.AsyncTask
 
 
