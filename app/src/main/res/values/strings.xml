@@ -7,6 +7,9 @@
     <string name="title_activity_item">ItemActivity</string>
 
     <string name="text_input_hint">Input a string</string>
+    <string name="text_save">Save</string>
+    <string name="text_alert_empty_data">Please fill both input field</string>
+    <string name="text_foot_note">Note : A default image will be added with your input data.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

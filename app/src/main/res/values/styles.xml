@@ -21,6 +21,31 @@
         <item name="android:padding">@dimen/dp5</item>
     </style>
 
+    <style name="MyInputTextViewStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@android:color/black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/sp13</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:padding">@dimen/dp5</item>
+    </style>
+
+    <style name="MyFootNoteTextViewStyle">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/sp13</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:padding">@dimen/dp5</item>
+        <item name="android:text">@string/text_foot_note</item>
+    </style>
+
+    <style name="MyButtonStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dp5</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

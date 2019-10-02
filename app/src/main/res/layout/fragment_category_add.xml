@@ -2,14 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="@dimen/dp300"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp10"
+    android:layout_gravity="center"
     tools:context=".fragment.CategoryAddFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_first_input"
+        style="@style/MyInputTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -17,17 +21,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            style="@style/MyInputTextViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="@string/text_input_hint"
-            style="@style/MyTextViewStyle"
-            android:padding="@dimen/dp5"/>
+            android:padding="@dimen/dp5" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_second_input"
+        style="@style/MyInputTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -35,11 +43,37 @@
         app:layout_constraintTop_toBottomOf="@+id/til_first_input">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_description"
+            style="@style/MyInputTextViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="@string/text_input_hint"
-            style="@style/MyTextViewStyle"
             android:padding="@dimen/dp5"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        style="@style/MyButtonStyle"
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp5"
+        android:text="@string/text_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_second_input" />
+
+    <TextView
+        style="@style/MyFootNoteTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

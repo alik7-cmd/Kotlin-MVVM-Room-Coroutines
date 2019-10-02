@@ -37,7 +37,6 @@ class HomeActivity : BaseActivity(), OnRecyclerItemClickListener<Category> {
         mViewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
         setSupportActionBar(toolbar)
         initView()
-        //mViewModel?.saveSampleData()
         observeLiveData()
     }
 
@@ -72,8 +71,8 @@ class HomeActivity : BaseActivity(), OnRecyclerItemClickListener<Category> {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_add_category -> {
-                /*val inputFragment = CategoryAddFragment.newInstance()
-                inputFragment.show(supportFragmentManager, null)*/
+                val inputFragment = CategoryAddFragment.newInstance()
+                inputFragment.show(supportFragmentManager, "CategoryAddFragment")
                 return true
             }
         }
