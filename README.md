@@ -362,4 +362,5 @@ mViewModel!!.insertCategory(
 > Here View is accessing the data from ViewModel class and ViewModel is accessing it from Repository class which has all the database operations.
 
 Thanks for reading this :heart:. If I got something wrong please let me know about it. I would definitely love to improve more.
+While writing this i took a huge inspiration from [this article](https://medium.com/mindorks/using-mvvm-android-jetpack-ebf1d9c1477c) published in https://medium.com
 
