@@ -1,5 +1,7 @@
 package com.android.test.interfaces
 
-interface OnRecyclerItemClickListener<T>:BaseRecyclerListener {
+import com.android.test.base.BaseRecyclerListener
+
+interface OnRecyclerItemClickListener<T>: BaseRecyclerListener {
     fun onItemClickListener(item:T, flag:Boolean)
 }

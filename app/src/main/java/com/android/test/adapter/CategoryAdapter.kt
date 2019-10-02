@@ -7,10 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.android.test.R
+import com.android.test.base.BaseRecyclerAdapter
+import com.android.test.base.BaseViewHolder
 import com.android.test.interfaces.OnRecyclerItemClickListener
 import com.android.test.local_db.Category
 
-class CategoryAdapter(context: Context):BaseRecyclerAdapter<Category, OnRecyclerItemClickListener<Category>, CategoryAdapter.CategoryVH>(context) {
+class CategoryAdapter(context: Context):
+    BaseRecyclerAdapter<Category, OnRecyclerItemClickListener<Category>, CategoryAdapter.CategoryVH>(context) {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): CategoryVH {
         return CategoryVH(inflate(R.layout.item_category_row, viewGroup))
     }

@@ -1,5 +1,4 @@
-package com.android.test.adapter
-import com.android.test.interfaces.BaseRecyclerListener
+package com.android.test.base
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
@@ -15,7 +14,7 @@ abstract class BaseRecyclerAdapter<T, L : BaseRecyclerListener, VH : BaseViewHol
 
     internal var items: MutableList<T>? = null
     private var listener: L? = null
-    private lateinit var layoutInflater: LayoutInflater
+    private var layoutInflater: LayoutInflater
     private var position: Int = 0
 
     init {
