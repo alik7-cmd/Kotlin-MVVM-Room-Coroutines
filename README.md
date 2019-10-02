@@ -280,8 +280,9 @@ class Repository(private var application: Application) {
 ```
 
 In this Repository class, we will write all the DAO operations and access them in the UI through ViewModel.
-##Create ViewModel Class
-Now we'll create a ViewModel class. We already discussed above about the **ViewModel** class. for more information you can also check [here](https://developer.android.com/topic/libraries/architecture/viewmodel#targetText=The%20ViewModel%20class%20is%20designed,changes%20such%20as%20screen%20rotations.&targetText=The%20Android%20framework%20manages%20the,such%20as%20activities%20and%20fragments.)
+
+## Create ViewModel Class
+Now we'll create a ViewModel class. We already discussed above about the **ViewModel** class.
 
 We've already written our **CategoryViewModel** class 
 
