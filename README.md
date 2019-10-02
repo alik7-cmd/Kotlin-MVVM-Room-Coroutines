@@ -229,7 +229,7 @@ abstract class AppDatabase : RoomDatabase() {
 }
 ```
 
-Please note that you can also customize your column name in **Entity** class if you want. All you have to do is to add `@ColumnInfo(name = "desired_name")` before declaring a variable in Entity class. if you don't use this `@ColumnInfo` anotation then it is automatically ignored.
+Please note that you can also customize your column name in **Entity** class if you want. All you have to do is to add `@ColumnInfo(name = "desired_name")` before declaring a variable in Entity class. if you don't use this `@ColumnInfo` annotation then it is automatically ignored.
 ## Create Repository
 This basically is a wrapper class which contains the business logic of our app. we will write all the database operation here so the person who is working on the UI does not have to worry about any database operations.
 
