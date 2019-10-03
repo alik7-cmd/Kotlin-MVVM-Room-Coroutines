@@ -1,4 +1,4 @@
-package com.android.test.viem_model
+package com.android.test.view_model
 
 import android.app.Application
 import android.text.TextUtils
