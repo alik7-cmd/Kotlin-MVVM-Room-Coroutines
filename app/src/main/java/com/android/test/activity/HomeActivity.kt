@@ -11,7 +11,7 @@ import com.android.test.R
 import com.android.test.adapter.CategoryAdapter
 import com.android.test.base.BaseActivity
 import com.android.test.local_db.entity.Category
-import com.android.test.viem_model.CategoryViewModel
+import com.android.test.view_model.CategoryViewModel
 
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_home.*
