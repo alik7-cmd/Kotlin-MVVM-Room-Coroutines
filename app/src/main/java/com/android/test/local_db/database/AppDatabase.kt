@@ -28,7 +28,8 @@ abstract class AppDatabase : RoomDatabase() {
         private fun buildDatabase(context: Context) =
             databaseBuilder(
                 context.applicationContext,
-                AppDatabase::class.java, "Sample.db").allowMainThreadQueries()
+                AppDatabase::class.java, "Sample.db"
+            )
                 .build()
     }
 }
