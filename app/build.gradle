@@ -34,6 +34,7 @@ def lifecycleVersion = '1.1.1'
 def espressoVersion = '3.2.0'
 def junitVersion = '4.12'
 def testRunnerVersion = '1.2.0'
+def coroutineVersion = '1.2.1'
 def rxKotlinVersion = '2.4.0'
 
 dependencies {
@@ -43,6 +44,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
     implementation "com.google.android.material:material:$materialDesignVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //dependency for architecture component
     implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
@@ -50,11 +52,11 @@ dependencies {
 
     //dependency for room persistance database
     implementation "android.arch.persistence.room:runtime:$roomDbVersion"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "android.arch.persistence.room:compiler:$roomDbVersion"
+
+    //dependency for coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
     //dependency for dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
