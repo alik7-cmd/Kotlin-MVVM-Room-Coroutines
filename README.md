@@ -19,12 +19,13 @@ def junitVersion = '4.12'
 def testRunnerVersion = '1.2.0'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
     implementation "com.google.android.material:material:$materialDesignVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //dependency for architecture component
     implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
@@ -32,11 +33,11 @@ dependencies {
 
     //dependency for room persistance database
     implementation "android.arch.persistence.room:runtime:$roomDbVersion"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "android.arch.persistence.room:compiler:$roomDbVersion"
+
+    //dependency for coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$testRunnerVersion"
@@ -236,46 +237,39 @@ This basically is a wrapper class which contains the business logic of our app. 
 We have already created the **Repository** class here
 
 ``` kotlin
-class Repository(private var application: Application) {
-    var mDao: CategoryDao
+class Repository(private var application: Application) : CoroutineScope {
 
-    var allCategoryList: LiveData<List<Category>>? = null
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main
+
+    var mDao: CategoryDao
 
     init {
         mDao = AppDatabase.getInstance(application).categoryDao()
-        allCategoryList = mDao.getAllCategory()
-
     }
 
-    fun getAllCategory(): LiveData<List<Category>>? {
-        return allCategoryList
+    fun getAllCategory() = mDao.getAllCategory()
+
+    fun insertCategory(category: Category) {
+        launch { insertCategorySuspend(category) }
     }
 
-    fun insertCategory(category: Category){
-        InsertCategoryAsyncTask(mDao).execute(category)
+    fun insertCategoryList(categoryList: List<Category>) {
+        launch { insertCategoryListSuspend(categoryList) }
     }
 
-    fun insertCategoryList(categoryList: List<Category>){
-        InsertCategoryListAsyncTask(mDao).execute(categoryList)
-    }
-
-    private class InsertCategoryAsyncTask internal constructor(private val categoryDao: CategoryDao) :
-        AsyncTask<Category, Void, Void>() {
-
-        override fun doInBackground(vararg category: Category): Void? {
-            categoryDao.insert(category[0])
-            return null
+    private suspend fun insertCategorySuspend(category: Category) {
+        withContext(Dispatchers.IO) {
+            mDao.insert(category)
         }
     }
 
-    private class InsertCategoryListAsyncTask internal constructor(private val categoryDao: CategoryDao) :
-        AsyncTask<List<Category>, Void, Void>() {
-
-        override fun doInBackground(vararg categoryList: List<Category>): Void? {
-            categoryDao.insertList(categoryList[0])
-            return null
+    private suspend fun insertCategoryListSuspend(categoryList: List<Category>) {
+        withContext(Dispatchers.IO) {
+            mDao.insertList(categoryList)
         }
     }
+
 }
 ```
 
