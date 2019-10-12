@@ -1,4 +1,4 @@
-# MVVM-Room-Kotlin
+# Kotlin-MVVM-Room-Coroutines
 ## What is MVVM
 Each component has its own responsibilities to do their task
 
